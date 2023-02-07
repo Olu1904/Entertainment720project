@@ -7,7 +7,7 @@ resource "aws_instance" "main" {
     tags = {
       "Name" = "entertainment720_${var.default_tags.env}-EC2"
     }
-    user_data = base64encode(file("C:/Users/oyeab/Downloads/terraform/user.sh"))
+    user_data = base64encode(file("C:/Users/oyeab/OneDrive/Desktop/Project3/user.sh"))
 }
 output "ec2_ssh_command" {
   value = "ssh -i ooyekanmi1.pem ubuntu@ec2-${replace(aws_instance.main.public_ip, ".", "-")}.compute-1.amazonaws.com"
